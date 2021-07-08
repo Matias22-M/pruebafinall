@@ -323,9 +323,34 @@
                 <p>Padrón de telefonía móvil en México: las grandes dudas que provoca el registro obligatorio que requiere tus datos biométricos</p>
               </div>
             </aside>
+
           </section>
         </main>
-        <footer>
+          <br><hr><br>
+          <div class="container">
+            <table class="table table-striped table-hover">
+              <tr>
+                <td colspan="2">Noticia</td>
+                <td>Categoria</td>
+                <td>ir</td>
+              </tr>
+              <tbody>
+              {% for no in listanoticias%}
+
+              <tr>
+                
+                <td width="15%"><img src="{% static no.imagenNoticia %}" width="200px" alt=""> </td>
+                <td width="50%"><p><b>{{no.nombreNoticia}}</b></p></td>
+                <td><b>{{no.categoria}}</b></td>
+                <td><a class="btn btn-primary" href="{% url 'noticiasP' %}">Ir a la noticia</a></td>
+              </tr>
+              {% endfor %}
+            </tbody>
+            </table>
+
+          </div>
+        
+          <footer>
           <div class="social-links">
             <section class="about">
               <h2>Nosotros</h2>
