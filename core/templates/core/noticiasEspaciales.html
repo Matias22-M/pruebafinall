@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Caos News</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        
+        <!--BOOTSTRAP-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+      crossorigin="anonymous"
+    />
+
+    <!--GOOGLE FONTS-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <html>
+      <head>
+        <!--FONT AWESOME-->
+        <link
+          rel="stylesheet"
+          href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+          integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+          crossorigin="anonymous"
+        />
+      </head>
+
+
+
+      <body>
+        <header>
+
+          
+          <div class="website-header">
+            <!-- Brand -->
+            <h1 class="brand" href="index.html">Caos News</h1>
+            <div></div>
+            <div class="social-icons">
+              <i class="fab fa-facebook-f"></i>
+              <i class="fab fa-twitter"></i>
+              <i class="fab fa-google-plus-g"></i>
+              <i class="fab fa-instagram"></i>
+              <i class="fas fa-rss"></i>
+            </div>
+          </div>
+          <nav class="navbar navbar-expand-md">
+            <!-- Toggler/collapsibe Button -->
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#collapsibleNavbar"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="noticiasEspaciales.html">Noticias Espaciales</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Internacional</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Tecnologia</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Deportes</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="periodistas.html">Periodistas</a>
+                </li>
+                
+                <div class="input-group rounded">
+                  <input type="search" class="form-control" placeholder="Busqueda" aria-label="Search"
+                    aria-describedby="search-addon" />
+                  <span class="input-group-text border-0" id="search-addon">
+                    <a href="#">
+                    <i class="fas fa-search"></i>
+                  </span>
+                </a>
+                </div>
+          
+                <li>
+                  <a href="login.html">
+                    <i class="far fa-user-circle fa-2x"></i>
+                </a>
+              </li>
+
+              <li>
+                                                 
+                  <div id="clm_i"></div>
+                  <div id="clm_p"></div>
+                  <div id="clm_ma"></div>
+                  <div id="clm_mi"></div>
+                  <div id="clm_h"></div>
+                  
+              </a>
+            </li> 
+
+              </ul>
+            </div>
+          </nav>
+          <div class="breaking-news-section">
+            <span id="btext">Ultima hora</span>
+            <marquee
+              direction="left"
+              onmouseover="this.stop()"
+              onmouseout="this.start()"
+            >
+              <a href="#" class="breaking-news"
+                ><p class="bntime">23 Abril, 2052</p>Blackboard de Duoc es
+                elegida la mejor plataforma</a
+              >
+              <a href="#" class="breaking-news">
+                <p class="bntime">23 Abril, 2021</p>
+                Confirman acusacion constitucional contra Piñera</a
+              >
+              <a href="#" class="breaking-news">
+                <p class="bntime">23 Abril, 2021</p>
+                La vacuna de Oxford: solo sera administrada a hombres</a
+              >
+            </marquee>
+          </div>
+        </header>
+        <main>
+          
+          <br>
+
+          <div class="container">
+            <h3>FILTROS</h3><br>
+            <form id="formax">
+
+                <div class="input-group mb-3" id="ovnn">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon1">Buscador General: </span>
+                    </div>
+                    <input type="text" id="fuente" onchange="buscar(); f2();" aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+
+            </form>
+            <br>
+            <table id="tbl_actividades" class="table table-striped">
+                <tr>
+                  <th>noticia</th>
+                  <th>contexto</th>
+                </tr>
+            <tbody id="tbody"></tbody>
+            
+            </table>
+          </div>
+
+          <br>
+
+         
+        </main>
+        <footer>
+          <div class="social-links">
+            <section class="about">
+              <h2>Nosotros</h2>
+              <p
+                >Caos News esta formada por un grupo de jóvenes estudiantes de periodismo y de comunicación audio visual, cansados de los medios
+                tradicionales por lo que buscamos innovar dentro del mundo digital</p
+              >
+              <div class="social-icons-footer">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter-square"></i>
+                <i class="fab fa-google-plus-square"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fas fa-rss-square"></i>
+                <i class="fab fa-youtube-square"></i>
+                <i class="fas fa-rss-square"></i>
+                <i class="fab fa-pinterest-square"></i>
+                <i class="fab fa-linkedin"></i>
+              </div>
+            </section>
+            
+            <section class="contact-form">
+              <div class="contact-container">
+              <h2>Contactanos</h2>
+              <input type="Nombre" placeholder="Nombre" />
+              <input type="email" placeholder="nombre@gmail.com" />
+                <label for="message"></label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+              <button type="button" class="footer-buttons">Enviar</button>
+            </section>
+          </div>
+        </div>
+
+          <div class="copyright"
+            >Copyright © 2021 Caos News</div
+          >
+        </footer>
+     <!--   <script
+          src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+          integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+          crossorigin="anonymous"
+        ></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+          integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+          crossorigin="anonymous"
+        ></script>
+        <script
+          src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+          integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+          crossorigin="anonymous"
+        ></script>
+      </body>
+    </html>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+      crossorigin="anonymous"
+    ></script> -->
+        <script type='text/javascript'>
+          $(document).ready(function() {
+             //option A
+             $("form").submit(function(e){
+                 
+                 e.preventDefault(e);
+             });
+         });
+         </script>
+    
+        <script>
+
+          $(document).ready(function(){
+          
+            traeNoticias();
+            
+          })
+          
+          function traeNoticias(){
+          var urlFormatted = "https://api.spaceflightnewsapi.net/v3/articles";
+          
+              $.get(urlFormatted,function(data){
+                          }).then(function(data){                     
+                          
+                              var cantidad = data.length;
+                              for (var i = 0; i <= cantidad; i++) {
+                                  var jbody = [];
+                                  jbody.push(data[i].id);
+                                  jbody.push(data[i].title);
+                                  jbody.push(data[i].url);
+                                  jbody.push(data[i].imageUrl);
+                                  jbody.push(data[i].newsSite);
+                                  jbody.push(data[i].summary);
+                                  jbody.push(data[i].publishedAt);
+                                  jbody.push(data[i].updatedAt);
+          
+                                  
+                                  
+          
+                                  var jhtml = `<tr><td width="250px"><img src="${jbody[3]}" width="100%" heigth="100%" ></td> <td><h3> ${jbody[1]} </h3> <p> ${jbody[5]}... </p><a href="${jbody[2]}" target="_blank"> IR A LA NOTICIA </a><br> <small><b> Fuente: </b>${jbody[4]} <br> <b>Fecha de publicacion: </b>${jbody[6].split("T")[0]}</small> <br></td></tr>`;
+          
+                                  $("#tbody").append(jhtml);
+          
+                                  
+                              }
+                              
+                          })
+          
+          }
+          
+          function buscar() {
+          
+          var input, table, tr, td, i, f;
+          input = document.getElementById("fuente").value.toUpperCase();
+          table = document.getElementById("tbl_actividades");
+          tr = table.getElementsByTagName("tr");
+          
+          for (i = 1 ; i < tr.length ; i++) {
+          td = tr[i].getElementsByTagName("td")[1];
+          if (td) {
+            if (td.innerHTML.toUpperCase().indexOf(input) > -1) {
+              tr[i].style.display = "";
+              } else {
+                tr[i].style.display = "none";
+                }
+            } 
+          }
+          
+          $('#tabla_actividades').show();
+          
+          }
+          
+          </script>
+
+  </body>
+
+
+
+</html>
+
+
