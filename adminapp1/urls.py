@@ -1,13 +1,8 @@
-from django.urls import path,include
-from . import views
-from .views import index,noticiasP,login
-from adminapp1.views import inicio,Crear,Modificar,Eliminar,inicioC,CrearC,ModificarC,EliminarC
-
+from .views import inicio,Crear,Modificar,Eliminar,inicioC,CrearC,ModificarC,EliminarC
 
 urlpatterns = [
-    path('',index,name="index"),
-    path('login',views.login,name="login"),
-    path('noticiasP/<id>',noticiasP,name="noticiasP"),
+
+    
     path('inicio',inicio,name="inicio"),
     path('Crear',Crear,name="Crear"),
     path('Modificar/<id>',Modificar,name="Modificar"),
@@ -16,7 +11,6 @@ urlpatterns = [
     path('CrearC',CrearC,name="CrearC"),
     path('ModificarC/<id>',ModificarC,name="ModificarC"),
     path('EliminarC/<id>',EliminarC,name="EliminarC"),
-    
     
     
 ]

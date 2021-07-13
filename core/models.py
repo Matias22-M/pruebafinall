@@ -22,4 +22,12 @@ class Noticia(models.Model):
     def __str__(self):
         return self.nombreNoticia 
 
+class Usuarios(models.Model):
+    idUsuario = models.IntegerField(primary_key=True,verbose_name="id de usuario ")
+    nombreUsuario = models.CharField(max_length=50,verbose_name="Nombre de Usuario ")
+    contrasenaUsuario = models.CharField(max_length=50,verbose_name="Contraseña")
+
+    def __str__(self):
+        return self.nombreUsuario
+
 

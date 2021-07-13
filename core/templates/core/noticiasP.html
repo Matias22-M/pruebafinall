@@ -40,14 +40,13 @@
   </head>
 
 
-
-  <body>
     <html>
       
 
 
 
       <body>
+       
         
         <header>
           
@@ -119,6 +118,9 @@
               </ul>
             </div>
           </nav>
+
+          
+
           <div class="breaking-news-section">
             <span id="btext">Ultima hora</span>
             <marquee
@@ -141,10 +143,70 @@
             </marquee>
           </div>
         </header>
+
+        <br>
+        <br>
+
+        <div id="fh">
+          <div class="row ">
+            <form action="method " action ="" id="Formulario "></form>
+          </div>
+            <div class="form-group">
+              {{form.as_table}}
+            </div>
+          </div>  
+
+          <div class="container">
+
+            <table>
+
+              <tr>
+
+                <td> <div id="idN">  </div> </td>
+
+              </tr>
+
+              <tr>
+
+                <td> <div id="idI">  </div> </td>
+
+              </tr>
+
+
+              <tr>
+
+                <td> <div id="idD">  </div> </td>
+
+              </tr>
+              
+              <tr>
+
+              <td><br><br><br><a class="btn btn-primary" href="{% url 'index'  %}">Volver</a></td>
+
+              <tr>
+            </table>
+            
+          </div>
     
      </body>
 
-  
+     <script>
+     
+       $( document ).ready(function() {
+        $("#fh").hide();
+       });
+
+        var idn1 = $("#id_nombreNoticia").val();
+        var idd1 = $("#id_descripcionNoticia").val();
+        var idi1 = $("#id_imagenNoticia").val();
+        
+        $("#idN").append("<p><h1>"+idn1+"</h1></p>");
+        $("#idD").append("<p>"+idd1+"</p>");
+      
+        $("#idI").append("<img width='700px' src='/static/"+idi1+"'%}>");
+        
+     
+     </script>
 
 
 </html>

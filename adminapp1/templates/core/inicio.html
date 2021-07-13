@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administracion t</title>
+</head>
+<body>
+
+    {%load static %}
+    <div class="container">
+        <h1><a href="{% url 'Crear' %}">Crear Noticia</a><br></h1>
+        <table class="table table-striped table-hover">
+          <tr>
+            <td colspan="2">Noticia</td>
+            <td>Categoria</td>
+            <td>ir</td>
+          </tr>
+          <tbody>
+          {% for no in listanoticias%}
+
+          <tr>
+            
+            <td width="15%">
+                <img src="{% static no.imagenNoticia %}" width="200px" alt=""> 
+            </td>
+            <td width="50%">
+                <p><b>{{no.nombreNoticia}}</b></p><br>
+                <p>{{no.descripcionNoticia}}</p>
+            </td>
+            <td><b>{{no.categoria}}</b></td>
+            <td>
+                <a href="{% url 'Modificar' no.idNoticia %}">Modificar</a><br>
+                <a href="{% url 'Eliminar' no.idNoticia %}">Eliminar</a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+        </table>
+
+      </div>
+
+    
+</body>
+</html>

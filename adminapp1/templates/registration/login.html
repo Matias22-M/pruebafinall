@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    {% load static %}
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -24,17 +25,21 @@
     <div class="container-fluid container">
       <div class="row justify-content-center">
         <div class="col-12 col-sm-6 col-md-3">
-          <form class="form-container">
+          <form class="form-container" method="POST">
+            {% csrf_token %}
             <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Correo</label>
+              {{ user.username }}
+              <a href="#">Cerrar Sesion</a>
+              <label for="exampleInputEmail1" class="form-label">Usuario</label>
               <input
-                type="email"
+                type="text"
                 class="form-control"
                 id="exampleInputEmail1"
                 aria-describedby="emailHelp"
+                name="username"
               />
               <div id="emailHelp" class="form-text"
-                >We'll never share your email with anyone else.</div
+                >Recuerda nunca compartir tu usuario con otras personas.</div
               >
             </div>
             <div class="mb-3">
@@ -45,23 +50,20 @@
                 type="password"
                 class="form-control"
                 id="exampleInputPassword1"
+                name="password"
               />
             </div>
             <div class="mb-3 form-check">
-              <input
-                type="checkbox"
-                class="form-check-input"
-                id="exampleCheck1"
-              />
-              <label class="form-check-label" for="exampleCheck1"
-                >Recordar</label
-              >
+              
+              
             </div>
-            <button type="submit" class="btn btn-primary">Ingresar</button>
-            <a href="index.html">
-              <i class="far fa-arrow-alt-circle-left fa-2x back-icon"></i>
+            <button type="submit" class="btn btn-primary">Ingresar</button><br><br>
+            <a href="{% url 'index' %}">
+              <i class="far fa-arrow-alt-circle-left fa-2x back-icon"> Volver</i>
             </a>
           </form>
+
+          
         </div>
       </div>
     </div>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administracion t</title>
+</head>
+<body>
+
+    {%load static %}
+    <div class="container">
+        <h1><a href="{% url 'CrearC' %}">Crear Categoria</a><br></h1>
+        <table class="table table-striped table-hover">
+          <tr>
+            <td>Noticia</td>
+            <td>Categoria</td>
+            <td>ir</td>
+          </tr>
+          <tbody>
+          {% for no in listacategoria%}
+
+          <tr>
+            
+            
+            <td width="50%">
+                <p><b>{{no.idCategoria}}</b></p><br>
+            </td>
+            <td><b>{{no.nombreCategoria}}</b></td>
+            <td>
+                <a href="{% url 'ModificarC' no.idCategoria %}">Modificar</a><br>
+                <a href="{% url 'EliminarC' no.idCategoria %}">Eliminar</a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+        </table>
+
+      </div>
+
+    
+</body>
+</html>
